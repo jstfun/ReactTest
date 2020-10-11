@@ -60,8 +60,16 @@ export const InventoryView: React.FC<IInventoryData> = ({ data }) => {
       <SearchBar vehicleTypeData={vehicleTypes} onSearchHandler={onSearch} />
 
       <div className={styles["vehicle-container"]}>
-        {_.map(filteredVehicles, (product, i) => (
-          <Card index={i} image={product.imageUrl} key={product.id} />
+        {_.map(filteredVehicles, (vehicle, i) => (
+          <Card
+            index={i}
+            name={vehicle.name}
+            address={vehicle.address}
+            imageUrl={vehicle.imageUrl}
+            price={vehicle.priceCentsPerDay}
+            type={vehicle.type.displayName}
+            key={vehicle.id}
+          />
         ))}
       </div>
     </div>

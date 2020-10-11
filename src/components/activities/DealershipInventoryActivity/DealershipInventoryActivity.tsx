@@ -14,7 +14,13 @@ export const DealershipInventoryActivity: React.FC = (props) => {
       {!queryTuple.loading &&
         _.map(queryTuple.data.dealerships, (dealership) => (
           <div className={styles.dealership}>
-            {dealership.name} [{dealership.id}]
+            <a
+              href={`/dealership/${dealership.id}`}
+              target="blank"
+              key={dealership.id}
+            >
+              {dealership.name}
+            </a>
           </div>
         ))}
     </div>
