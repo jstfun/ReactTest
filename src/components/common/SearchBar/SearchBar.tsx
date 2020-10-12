@@ -32,13 +32,14 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
         <input
           type="text"
           value={searchName}
-          placeholder="Search by name"
+          placeholder="Search by name…"
           onChange={onChangeName}
         ></input>
       </div>
 
       <div className={styles["type-wrapper"]}>
         <div className={styles.select}>
+          <div className={styles.arrow}></div>
           <select
             name="search_type"
             onChange={onChangeVehicleType}

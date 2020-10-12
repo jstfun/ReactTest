@@ -40,6 +40,7 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  color: $grey-color-3;
 
   @include is-phone-portrait() {
     flex-direction: column;
@@ -61,7 +62,10 @@
   .terms-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+
+    @include is-phone-portrait() {
+      margin-top: 12px;
+    }
   }
 
   @include is-phone-portrait() {
