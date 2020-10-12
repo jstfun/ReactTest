@@ -1,7 +1,7 @@
-import React, { ChangeEvent, useState } from "react";
-import _ from "lodash";
-import { IVehicleType } from "components/activities/DealershipInventoryDetailActivity/dataService";
-const styles = require("./SearchBar.module.scss");
+import React, { ChangeEvent, useState } from 'react';
+import _ from 'lodash';
+import { IVehicleType } from 'components/activities/DealershipInventoryDetailActivity/dataService';
+const styles = require('./SearchBar.module.scss');
 
 interface ISearchBarProps {
   vehicleTypeData: IVehicleType[];
@@ -10,10 +10,10 @@ interface ISearchBarProps {
 
 export const SearchBar: React.FC<ISearchBarProps> = ({
   vehicleTypeData,
-  onSearchHandler,
+  onSearchHandler
 }) => {
-  const [searchName, setSearchName] = useState("");
-  const [searchInventory, setSearchInventory] = useState("");
+  const [searchName, setSearchName] = useState('');
+  const [searchInventory, setSearchInventory] = useState('');
 
   const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchName(e.target.value);
@@ -27,7 +27,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles["name-wrapper"]}>
+      <div className={styles['name-wrapper']}>
         <img src="/images/search.png" alt="Search button"></img>
         <input
           type="text"
@@ -37,7 +37,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
         ></input>
       </div>
 
-      <div className={styles["type-wrapper"]}>
+      <div className={styles['type-wrapper']}>
         <div className={styles.select}>
           <div className={styles.arrow}></div>
           <select
@@ -45,7 +45,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
             onChange={onChangeVehicleType}
             value={searchInventory}
           >
-            {_.map(vehicleTypeData, (vehicleType) => (
+            {_.map(vehicleTypeData, vehicleType => (
               <option key={vehicleType.name} value={vehicleType.name}>
                 {vehicleType.displayName}
               </option>

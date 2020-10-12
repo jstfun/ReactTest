@@ -2,8 +2,6 @@ import _ from 'lodash';
 
 import { useDealershipInventoryActivityQuery as useBaseQuery } from 'generated/graphql';
 
-
-
 export interface IDealership {
   id: string;
   name: string;
@@ -20,10 +18,13 @@ export function useDealershipInventoryActivityQuery() {
     dealerships: []
   };
   if (tuple.data?.dealerships) {
-    data.dealerships = _.map(tuple.data.dealerships, (dealership): IDealership => ({
-      id: dealership.id,
-      name: dealership.name
-    }));
+    data.dealerships = _.map(
+      tuple.data.dealerships,
+      (dealership): IDealership => ({
+        id: dealership.id,
+        name: dealership.name
+      })
+    );
   }
 
   return {

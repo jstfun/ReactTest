@@ -1,31 +1,16 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import _ from "lodash";
-import * as dataService from "./dataService";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import * as dataService from './dataService';
 
-import { TopBar } from "components/common/TopBar/TopBar";
-import { Footer } from "components/common/Footer/Footer";
-import { InventoryView } from "./InventoryView/InventoryView";
-import { LoadingView } from "components/common/LoadingView/LoadingView";
-
-const styles = require("./DealershipInventoryDetailActivity.module.scss");
+import { TopBar } from 'components/common/TopBar/TopBar';
+import { Footer } from 'components/common/Footer/Footer';
+import { InventoryView } from './InventoryView/InventoryView';
+import { LoadingView } from 'components/common/LoadingView/LoadingView';
 
 interface IInventoryInfo {}
-export const DealershipInventoryDetailActivity: React.FC<IInventoryInfo> = (
-  props
-) => {
+export const DealershipInventoryDetailActivity: React.FC<IInventoryInfo> = () => {
   const { dealershipId } = useParams();
   const queryTuple = dataService.useDealershipDetailActivityQuery(dealershipId);
-
-  const getSearchResult = (searchName: string, searchInventory: string) => {
-    if (
-      queryTuple.data &&
-      queryTuple.data.dealership &&
-      queryTuple.data.dealership.vehicles &&
-      queryTuple.data.dealership.vehicles.length > 0
-    ) {
-    }
-  };
 
   if (queryTuple.loading) {
     return <LoadingView></LoadingView>;

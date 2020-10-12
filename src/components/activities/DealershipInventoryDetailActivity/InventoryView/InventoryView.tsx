@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import _ from "lodash";
-import { IVehicle, IVehicleType, IDealership } from "../dataService";
-import { SearchBar } from "components/common/SearchBar/SearchBar";
-import { Avatar } from "components/common/Avatar/Avatar";
-import { Card } from "components/common/Card/Card";
+import React, { useState, useEffect } from 'react';
+import _ from 'lodash';
+import { IVehicle, IVehicleType, IDealership } from '../dataService';
+import { SearchBar } from 'components/common/SearchBar/SearchBar';
+import { Avatar } from 'components/common/Avatar/Avatar';
+import { Card } from 'components/common/Card/Card';
 
-const styles = require("./InventoryView.module.scss");
+const styles = require('./InventoryView.module.scss');
 
 interface IInventoryData {
   data: IDealership;
@@ -20,11 +20,11 @@ export const InventoryView: React.FC<IInventoryData> = ({ data }) => {
   const [vehicleTypes, setVehicleTypes] = useState<IVehicleType[]>([]);
 
   const initVehicleTypes = () => {
-    let vehicleTypes: IVehicleType[] = [
-      { id: "", name: "", displayName: "All Inventory" },
+    const vehicleTypes: IVehicleType[] = [
+      { id: '', name: '', displayName: 'All Inventory' }
     ];
 
-    vehicles.forEach((vehicle) => {
+    vehicles.forEach(vehicle => {
       if (vehicleTypes.indexOf(vehicle.type) < 0) {
         vehicleTypes.push(vehicle.type);
       }
@@ -36,11 +36,11 @@ export const InventoryView: React.FC<IInventoryData> = ({ data }) => {
     let result: IVehicle[] = vehicles;
 
     if (searchName.length > 0) {
-      result = result.filter((vehicle) => vehicle.name.includes(searchName));
+      result = result.filter(vehicle => vehicle.name.includes(searchName));
     }
 
     if (searchType.length > 0) {
-      result = result.filter((vehicle) => vehicle.type.name === searchType);
+      result = result.filter(vehicle => vehicle.type.name === searchType);
     }
 
     setFilteredVehicles(result);
@@ -52,14 +52,14 @@ export const InventoryView: React.FC<IInventoryData> = ({ data }) => {
 
   return (
     <div className={styles.container}>
-      <Avatar className={styles["dealership-logo"]} image={logoUrl}></Avatar>
+      <Avatar className={styles['dealership-logo']} image={logoUrl}></Avatar>
 
-      <h2 className={styles["dealership-name"]}>{name}</h2>
-      <h3 className={styles["dealership-address"]}>{address}</h3>
+      <h2 className={styles['dealership-name']}>{name}</h2>
+      <h3 className={styles['dealership-address']}>{address}</h3>
 
       <SearchBar vehicleTypeData={vehicleTypes} onSearchHandler={onSearch} />
 
-      <div className={styles["vehicle-container"]}>
+      <div className={styles['vehicle-container']}>
         {_.map(filteredVehicles, (vehicle, i) => (
           <Card
             index={i}

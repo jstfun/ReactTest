@@ -1,6 +1,4 @@
-import _ from "lodash";
-
-import { useDealershipDetailActivityQuery as useBaseQuery } from "generated/graphql";
+import { useDealershipDetailActivityQuery as useBaseQuery } from 'generated/graphql';
 
 export interface IVehicleType {
   id: string;
@@ -32,9 +30,10 @@ export interface IData {
 export function useDealershipDetailActivityQuery(id: any) {
   const tuple = useBaseQuery({ variables: { id } });
 
-  const data: IData = <IData>{
-    dealership: {},
-  };
+  const data: IData = {
+    dealership: {}
+  } as IData;
+
   if (tuple.data?.dealership) {
     const dealership = tuple.data?.dealership;
     data.dealership = {
@@ -42,12 +41,12 @@ export function useDealershipDetailActivityQuery(id: any) {
       name: dealership.name,
       logoUrl: dealership.logoUrl,
       address: dealership.address,
-      vehicles: dealership.vehicles,
+      vehicles: dealership.vehicles
     };
   }
 
   return {
     ...tuple,
-    data,
+    data
   };
 }
