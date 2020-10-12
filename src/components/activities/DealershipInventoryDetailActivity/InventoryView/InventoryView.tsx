@@ -13,7 +13,6 @@ interface IInventoryData {
 
 export const InventoryView: React.FC<IInventoryData> = ({ data }) => {
   const { name, address, logoUrl, vehicles } = data;
-
   const [filteredVehicles, setFilteredVehicles] = useState<IVehicle[]>(
     vehicles
   );
