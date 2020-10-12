@@ -28,7 +28,11 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   return (
     <div className={styles.container}>
       <div className={styles['name-wrapper']}>
-        <img src="/images/search.png" alt="Search button"></img>
+        <img
+          src="/images/search.png"
+          alt="Search button"
+          srcSet="/images/search.png 1x, /images/search@2x.png 2x, /images/search@3x.png 3x"
+        ></img>
         <input
           type="text"
           value={searchName}

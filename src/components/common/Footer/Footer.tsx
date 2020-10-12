@@ -8,7 +8,11 @@ export const Footer: React.FC = () => {
       <div className={styles['appstore-img']}></div>
       <div className={styles['legal-container']}>
         <div className={styles['rr-wrapper']}>
-          <img src="/images/rrlogotransparent.png" alt="rr log"></img>
+          <img
+            src="/images/rrlogotransparent.png"
+            alt="rr log"
+            srcSet="/images/rrlogotransparent.png 1x, /images/rrlogotransparent@2x.png 2x, /images/rrlogotransparent@3x.png 3x"
+          ></img>
           <span aria-label="Powered by Recreatio">Powered by Recreatio</span>
         </div>
         <div className={styles['terms-wrapper']}>
@@ -35,7 +39,11 @@ export const Footer: React.FC = () => {
           >
             Maps powered by
           </a>
-          <img src="/images/google.png" alt="google icon"></img>
+          <img
+            src="/images/google.png"
+            alt="google icon"
+            srcSet="/images/google.png 1x, /images/google@2x.png 2x, /images/google@3x.png 3x"
+          ></img>
         </div>
       </div>
     </div>
