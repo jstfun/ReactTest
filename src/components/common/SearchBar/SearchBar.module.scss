@@ -11,10 +11,10 @@
 
   .name-wrapper,
   .type-wrapper {
-    height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 50px;
     border: 1px solid $grey-color-4;
     border-radius: 3px;
     font-size: 12px;
@@ -28,9 +28,9 @@
       width: 100%;
     }
 
-    margin-right: 13px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-right: 13px;
 
     @include is-phone-portrait {
       margin-right: 0px;
@@ -42,11 +42,11 @@
 
     &::after {
       content: "";
-      width: 1px;
-      height: 32px;
       position: absolute;
       top: 50%;
       right: -14px;
+      width: 1px;
+      height: 32px;
       transform: translate(0, -50%);
       background: #e2e2e2;
     }
@@ -77,11 +77,9 @@
       width: 100%;
     }
 
-    margin-left: 12px;
-    // padding-left: 16px;
-    // padding-right: 16px;
     padding-top: 18px;
     padding-bottom: 18px;
+    margin-left: 12px;
     overflow: hidden;
 
     @include is-phone-portrait {
@@ -96,29 +94,32 @@
       position: relative;
 
       .arrow {
+        z-index: 12;
+
         position: absolute;
         top: 50%;
         right: 0;
         width: 24px;
         height: 100%;
-        transform: translate(0, -50%);
         background: url("/images/arrow.svg") no-repeat;
         background-position: left;
         background-color: white;
         background-size: 6px;
-        z-index: 12;
+
+        transform: translate(0, -50%);
       }
 
       select {
-        width: 100%;
-        background: transparent;
-        border: 0;
-        padding-left: 16px;
-        outline: none;
-        border-radius: 0;
-        position: relative;
         z-index: 10;
+
+        position: relative;
+        width: 100%;
+        padding-left: 16px;
+        border: 0;
+        border-radius: 0;
         color: #000000;
+        background: transparent;
+        outline: none;
 
         options {
           color: #000000;

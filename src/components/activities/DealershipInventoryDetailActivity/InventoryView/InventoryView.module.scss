@@ -1,8 +1,8 @@
 @import "styles/config";
 
 .container {
-  position: relative;
   flex: 1;
+  position: relative;
   width: 100%;
   min-width: 320px;
   padding-left: 10%;
@@ -24,15 +24,15 @@
   position: absolute;
   left: 50%;
   top: 0%;
-
   width: 86px;
   height: 86px;
-  transform: translate(-50%, -50%);
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
   border: 4px solid #ffffff;
   border-radius: 50%;
   box-sizing: content-box;
   overflow: hidden;
+
+  transform: translate(-50%, -50%);
 
   @include is-phone-portrait {
     width: 60px;
@@ -42,24 +42,24 @@
 
 .dealership-name {
   margin-top: 60px;
-  font-size: 28px;
-  line-height: 1.2;
-  font-weight: bold;
   color: #000000;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .dealership-address {
   margin-top: 8px;
   margin-bottom: 56px;
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: normal;
   color: $grey-color-1;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 .vehicle-container {
-  width: 100%;
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
 
   @include is-phone-portrait() {
