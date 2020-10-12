@@ -26,12 +26,6 @@
   top: 0%;
   width: 86px;
   height: 86px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  box-sizing: content-box;
-  overflow: hidden;
-  z-index: 1100;
   transform: translate(-50%, -50%);
 
   @include is-phone-portrait {
