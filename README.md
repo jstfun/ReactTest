@@ -1,4 +1,4 @@
-# iron-forge-candidate-test-react
+# iron-forge-react-demo
 
 * The dealership inventory activity is the main screen of this project. It has been stubbed out already, and has a component file, a CSS module file, a GraphQL query file, and a data service layer file already set up. You will modify these files in order to complete the project. Any other components you make must follow the same naming conventions and folder structure.
 * The GraphQL API is located at [https://candidate-api-2020-03.ironforge.co/graphql](https://candidate-api-2020-03.ironforge.co/graphql). Opening this link in a browser will open the GraphQL Playground, which you may use to explore the schema that is available to your project.
